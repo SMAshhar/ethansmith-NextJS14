@@ -70,3 +70,6 @@ p {
 .textarea {
   @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
 }
+.bg-circleStar {
+  background-image: url('/circle-star.svg');
+}
