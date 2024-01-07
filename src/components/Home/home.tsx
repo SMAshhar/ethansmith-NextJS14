@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import React from "react";
 
 // components
@@ -16,13 +16,13 @@ import ProjectsBtnXl from "@/components/ProjectsBtn/projectBtnComponent";
 
 export default function Home1() {
   return (
-    <main className="bg-slate-800/60 h-screen">
+    <main className="bg-slate-800/60 h-screen pt-8">
       {/* text */}
-      <div className="w-full h-full bg-gradient-to-r from-slate-800/10 via-black/30 to-black/10 ">
+      <div className="w-full h-full bg-gradient-to-r from-slate-800/10 via-black/30 to-black/10">
         <div className="text-center flex flex-col justify-center xl:pt-36 xl:text-left h-full container mx-auto">
           {/* TITLE */}
           <motion.h1
-            variants={fadeIn("down", 0.2)}
+            variants={fadeIn("down", 0.8)}
             initial="hidden"
             animate="show"
             exit="hidden"
@@ -33,7 +33,7 @@ export default function Home1() {
           </motion.h1>
           {/* subtitle */}
           <motion.p
-            variants={fadeIn("down", 0.3)}
+            variants={fadeIn("down", 1.0)}
             initial="hidden"
             animate="show"
             exit="hidden"
@@ -51,7 +51,31 @@ export default function Home1() {
         </div>
       </div>
       {/* image */}
-      <div>Image</div>
+      <div className="w-[1200px] h-full absolute right-0 bottom-0">
+        {/* bg image */}
+        <motion.div
+          variants={fadeIn("up", 0.9)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="bg-none xl:bg-[url('/bg-explosion.png')] xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"
+        >
+          {/* particles */}
+          <ParticlesContainer />
+          {/* avatar img */}
+          <motion.div
+            variants={fadeIn("up", 0.9)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-0 lg:right-[8%]"
+          >
+            <Avatar />
+          </motion.div>
+        </motion.div>
+      </div>
     </main>
   );
 }

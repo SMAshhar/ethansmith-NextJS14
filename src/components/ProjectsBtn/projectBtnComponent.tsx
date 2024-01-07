@@ -11,7 +11,7 @@ import { fadeIn } from "@/utils/variants";
 export default function ProjectsBtnXl() {
   return (
     <motion.div
-      variants={fadeIn("down", 0.4)}
+      variants={fadeIn("down", 0.8)}
       initial="hidden"
       animate="show"
       exit="hidden"

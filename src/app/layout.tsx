@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`page bg-site text-white bg-gray-100 bg-no-repeat ${sora.variable} font-sora relative `}>
+    <html lang="en" className={`page text-white bg-site bg-cover bg-no-repeat ${sora.variable} font-sora relative `}>
 
       <body className={sora.className}>
         <TopLeftImg />

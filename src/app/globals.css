@@ -28,7 +28,7 @@ body {
 }
 
 .page {
-  @apply w-full h-screen overflow-hidden
+  @apply w-full h-full overflow-hidden
 }
 
 .translate-z-0 {
@@ -72,4 +72,10 @@ p {
 }
 .bg-circleStar {
   background-image: url('/circle-star.svg');
+}
+.bg-explosion {
+  background-image: url('/bg-explosion.png');
+}
+.bg-site {
+  background-image: url('/site-bg.svg');
 }
