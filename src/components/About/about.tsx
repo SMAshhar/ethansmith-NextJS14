@@ -117,7 +117,7 @@ export default function AboutPage() {
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
-    <div className="h-full text-center xl:text-left xl:px-32">
+    <div className="h-full relative text-center xl:text-left xl:px-32">
       <Circles />
       {/* avatar image */}
       <motion.div

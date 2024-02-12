@@ -18,7 +18,7 @@ export default function Home1() {
   return (
     <main className="bg-slate-800/60 h-screen pt-8">
       {/* text */}
-      <div className="w-full h-full bg-gradient-to-r from-slate-800/10 via-black/30 to-black/10">
+      <div className="w-full h-full bg-gradient-to-r from-slate-800/10 via-black/30 to-black/10 bg-blend-color-dodge">
         <div className="text-center flex flex-col justify-center xl:pt-36 xl:text-left h-full container mx-auto">
           {/* TITLE */}
           <motion.h1
