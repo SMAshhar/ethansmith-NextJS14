@@ -22,8 +22,8 @@ type NavData = {
 export const navData: NavData = [
     { name: 'home', path: '/', icon: <HiHome /> },
     { name: 'about', path: '/about', icon: <HiUser /> },
-    { name: 'websites', path: '/websites', icon: <HiRectangleGroup /> },
-    { name: 'GenAi', path: '/genai', icon: <HiViewColumns /> },
+    { name: 'services', path: '/services', icon: <HiRectangleGroup /> },
+    { name: 'work', path: '/work', icon: <HiViewColumns /> },
     {
         name: 'testimonials',
         path: '/testimonials',

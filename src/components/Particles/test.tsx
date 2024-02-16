@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Carousel() {
@@ -36,7 +37,7 @@ export default function Carousel() {
       </div>
 
       <div className="w-full h-96 overflow-hidden">
-        <img 
+        <Image 
           src={slides[currentSlide].image} 
           alt={slides[currentSlide].image}
           className="object-cover w-full h-full"

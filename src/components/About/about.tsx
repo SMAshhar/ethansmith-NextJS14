@@ -42,18 +42,21 @@ const aboutData: AboutDataItem[] = [
       {
         title: "Web Development",
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          <FaHtml5 key={'e'}  />,
+          <FaCss3 key={'f'} />,
+          <FaJs key={'g'} />,
+          <FaReact key={'h'} />,
+          <SiNextdotjs key={'i'} />,
+          // <SiFramer />,
+          // <FaWordpress />,
         ],
       },
       {
         title: "UI/UX Design",
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [
+          <FaFigma key={'a'} />, 
+          <SiAdobexd key={'b'} />, 
+          <SiAdobephotoshop key={'c'} />],
       },
     ],
   },
@@ -61,12 +64,12 @@ const aboutData: AboutDataItem[] = [
     title: "awards",
     info: [
       {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
+        title: "Webby Awards-Honoree",
+        stage: "2011-2012",
       },
       {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
+        title: "Adobe Design Achievement-Finalist",
+        stage: "2009-2010",
       },
     ],
   },
@@ -74,16 +77,16 @@ const aboutData: AboutDataItem[] = [
     title: "experience",
     info: [
       {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
+        title: "UX/UI Designer-XYZ Company",
+        stage: "2012-2023",
       },
       {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
+        title: "Web Developer-ABC Agency",
+        stage: "2010-2012",
       },
       {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
+        title: "Intern-DEF Corporation",
+        stage: "2008-2010",
       },
     ],
   },
@@ -91,15 +94,15 @@ const aboutData: AboutDataItem[] = [
     title: "credentials",
     info: [
       {
-        title: "Web Development - ABC University, LA, CA",
+        title: "Web Development - ABC University, CA",
         stage: "2011",
       },
       {
-        title: "Computer Science Diploma - AV Technical Institute",
+        title: "Computer Science Diploma - AV Technical",
         stage: "2009",
       },
       {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
+        title: "Certified Graphic Designer - ABC, CA",
         stage: "2006",
       },
     ],
@@ -117,8 +120,7 @@ export default function AboutPage() {
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
-    <div className="h-full relative text-center xl:text-left xl:px-32">
-      <Circles />
+    <div className="h-full px-2 relative text-center xl:text-left xl:px-32">
       {/* avatar image */}
       <motion.div
         variants={fadeIn("right", 0.9)}
@@ -126,19 +128,19 @@ export default function AboutPage() {
         animate="show"
         exit="hidden"
         transition={{ duration: 1, ease: "easeInOut" }}
-        className="hidden xl:flex absolute bottom-0 -left-[360px]"
+        className="hidden xl:flex fixed bottom-0 -left-[360px]"
       >
         <Avatar />
       </motion.div>
       <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
         {/* text */}
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="flex-1 flex flex-col justify-center xl:w-1/2">
           <motion.h2
             variants={fadeIn("right", 0.9)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="text-4xl"
+            className="text-2xl md:text-4xl"
           >
             Captivating <span className="text-red-500">stories</span> birth
             magnificent designs.
@@ -148,9 +150,9 @@ export default function AboutPage() {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-base xl:text-lg"
+            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-xs md:text-base xl:text-lg"
           >
-            10 years ago, I began freelancing as a developer. Since then, I've
+            10 years ago, I began freelancing as a developer. Since then, I&lsquove
             done remote worf for agencies, conslted for startups, and
             collaborated on digital products for business and consumer use.
           </motion.p>
@@ -208,7 +210,7 @@ export default function AboutPage() {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] xl:h-[480px]"
+          className="flex flex-col w-full xl:max-w-[48%] xl:h-[480px] xl:w-1/2"
         >
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
             {aboutData.map((item, i) => {
@@ -218,7 +220,7 @@ export default function AboutPage() {
                   className={`${
                     index === i &&
                     "text-red-500 after:w-[100%] after:bg-red-500 after:transition-all after:duration-300"
-                  } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
+                  } cursor-pointer text-sm md:text-base capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-red-500 after:absolute after:-bottom-1 after:left-0`}
                   onClick={() => setIndex(i)}
                 >
                   {item.title}
@@ -230,17 +232,21 @@ export default function AboutPage() {
             {aboutData[index].info.map((item, i) => {
               return (
                 <div
-                  key={i}
-                  className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
+                  key={`${item.title}-${i}`}
+                  className="flex-1 flex flex-col text-sm md:text-base md:flex-row max-w-max gap-x-2 items-center text-white/60"
                 >
                   {/* title */}
                   <div className="font-light mb-2 md:mb-0 ">{item.title}</div>
-                  <div className="hidden md:flex mx-2">-</div>
+                  <div className="hidden md:flex">-</div>
                   <div>{item.stage}</div>
                   <div className="flex gap-x-4">
                     {/* icons */}
                     {item.icons?.map((icon, i) => {
-                      return <div key={i} className="text-2xl text-white">{icon}</div>;
+                      return (
+                        <div key={i} className="text-2xl text-white">
+                          {icon}
+                        </div>
+                      );
                     })}
                   </div>
                 </div>

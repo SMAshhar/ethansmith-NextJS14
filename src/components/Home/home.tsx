@@ -54,7 +54,7 @@ export default function Home1() {
       <div className="w-[1200px] h-full absolute right-0 bottom-0">
         {/* bg image */}
         <motion.div
-          variants={fadeIn("up", 0.9)}
+          variants={fadeIn("up", 1.0)}
           initial="hidden"
           animate="show"
           exit="hidden"
@@ -64,8 +64,9 @@ export default function Home1() {
           {/* particles */}
           <ParticlesContainer />
           {/* avatar img */}
+        </motion.div>
           <motion.div
-            variants={fadeIn("up", 0.9)}
+            variants={fadeIn("up", 0.3)}
             initial="hidden"
             animate="show"
             exit="hidden"
@@ -74,7 +75,6 @@ export default function Home1() {
           >
             <Avatar />
           </motion.div>
-        </motion.div>
       </div>
     </main>
   );
