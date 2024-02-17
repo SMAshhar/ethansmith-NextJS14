@@ -1,3 +1,5 @@
+This project is the re-creation of the famous project "ethan smith" on NextJS 14.1.0, tailwind 3.3.0 and framer-motion 10.16.16. 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
