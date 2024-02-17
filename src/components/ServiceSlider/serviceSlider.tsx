@@ -23,7 +23,7 @@ const ServiceSlider = () => {
               exit="hidden"
               className="h2 xl:mt-8"
             >
-              My Servces <span className="text-red-500">.</span>
+              My Services <span className="text-red-500">.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.3)}
